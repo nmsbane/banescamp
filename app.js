@@ -12,7 +12,7 @@ var commentRoutes = require("./routes/comments");
 var campgroundRoutes = require("./routes/campgrounds");
 var indexRoutes = require("./routes/index");
 
-seedDB();
+//seedDB();
 
  
 // connect to banes_camp database

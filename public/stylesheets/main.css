@@ -10,3 +10,7 @@
     /* thumbnails inside of caption-full class*/
     margin: 9px;
 }
+
+#deleteform {
+    display: inline;
+}

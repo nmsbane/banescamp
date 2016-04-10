@@ -27,6 +27,9 @@
                         </em>
                     </p>
                     <a href="/campgrounds/<%= camp._id %>/edit" class="btn btn-warning">Edit Camp</a>
+                    <form id="deleteform" method="POST" action="/campgrounds/<%= camp._id %>?_method=DELETE">
+                        <input type="submit" class="btn btn-danger" value="Delete">
+                    </form>
                 </div>
             </div>
             <div class="row">

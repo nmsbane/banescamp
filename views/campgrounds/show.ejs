@@ -52,6 +52,9 @@
                                         <p>
                                             <%= comment.text %>
                                         </p> 
+                                    <a href="/campgrounds/<%= camp._id %>/comments/<%= comment._id %>/edit" class="btn btn-warning">
+                                        Edit
+                                    </a>
                                 </div>
                             </div>
                         <% }); %>

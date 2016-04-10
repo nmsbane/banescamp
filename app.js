@@ -31,6 +31,12 @@ app.use(express.static(__dirname + '/public'));
 app.use(passport.initialize());
 app.use(passport.session());
 
+// middleware to put the currentUser in every response local variables
+app.use(function(req, res, next) {
+    res.locals.currentUser = req.user;
+    next();
+});
+
 passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());

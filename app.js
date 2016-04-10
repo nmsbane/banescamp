@@ -11,6 +11,7 @@ var User = require("./models/user");
 var commentRoutes = require("./routes/comments");
 var campgroundRoutes = require("./routes/campgrounds");
 var indexRoutes = require("./routes/index");
+var methodOverride = require("method-override");
 
 //seedDB();
 
@@ -39,6 +40,9 @@ app.use(function(req, res, next) {
     res.locals.currentUser = req.user;
     next();
 });
+
+// configure express app to use the method override module
+app.use(methodOverride("_method"));
 
 passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());

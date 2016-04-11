@@ -43,13 +43,6 @@ router.get('/logout', function(req, res) {
    res.redirect('/campgrounds');
 });
 
-// create a middleware which will check if the user is logged in or not
-function isLoggedIn(req, res, next) {
-    if(req.isAuthenticated()) {
-        return next();   
-    } 
-    res.redirect('/login');
-}
 
 
 module.exports = router;

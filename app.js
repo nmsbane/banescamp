@@ -18,8 +18,10 @@ var flash = require("connect-flash");
 
  
 // connect to banes_camp database
-mongoose.connect("mongodb://localhost/banes_camp");
+// mongoose.connect("mongodb://localhost/banes_camp");
+//mongodb://<dbuser>:<dbpassword>@ds019950.mlab.com:19950/banescamp
 
+mongoose.connect("mongodb://<dbuser>:<dbpassword>@ds019950.mlab.com:19950/banescamp");
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(require("express-session")({

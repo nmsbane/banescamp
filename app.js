@@ -12,6 +12,7 @@ var commentRoutes = require("./routes/comments");
 var campgroundRoutes = require("./routes/campgrounds");
 var indexRoutes = require("./routes/index");
 var methodOverride = require("method-override");
+var flash = require("connect-flash");
 
 //seedDB();
 
@@ -34,12 +35,8 @@ app.use(express.static(__dirname + '/public'));
 // configure passport
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
-// middleware to put the currentUser in every response local variables
-app.use(function(req, res, next) {
-    res.locals.currentUser = req.user;
-    next();
-});
 
 // configure express app to use the method override module
 app.use(methodOverride("_method"));
@@ -49,6 +46,15 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.set('view engine', 'ejs');
+
+// middleware to put the currentUser in every response local variables
+app.use(function(req, res, next) {
+    res.locals.currentUser = req.user;
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
+    next();
+});
+
 
 app.use('/', indexRoutes);
 app.use('/campgrounds/:id/comments', commentRoutes);

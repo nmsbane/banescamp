@@ -21,7 +21,9 @@ var flash = require("connect-flash");
 // mongoose.connect("mongodb://localhost/banes_camp");
 //mongodb://<dbuser>:<dbpassword>@ds019950.mlab.com:19950/banescamp
 
-mongoose.connect("mongodb://root:root@ds019950.mlab.com:19950/banescamp");
+var url = process.env.DATABASEURL || "mongodb://localhost/banes_camp";
+
+mongoose.connect(url);
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(require("express-session")({

@@ -14,3 +14,32 @@
 #deleteform {
     display: inline;
 }
+
+#slideshow {
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:-9999;
+}
+
+img {
+    width: 100%;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+a {
+    color: rgb(25, 134, 212);
+}
+#center {
+    font-size: 2.5em;
+    color: yellowgreen;
+    margin: auto;
+    text-align: center;
+    margin-top: 20%;
+}

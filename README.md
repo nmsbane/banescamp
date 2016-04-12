@@ -3,6 +3,8 @@ A website which shows the list of campgrounds, and the user can comment or edit 
 
 This website is developed using MEN Stack. 
 
+The website is running live in this url  [banes camp](https://secret-bastion-15225.herokuapp.com "Title")
+
 ## A brief intro to functionality of site.
 
 A user who is not logged in or signed up is free to view all the list of campgrounds, associated comments, and information about campground
